@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+        <report>
+            <html outputDirectory="_coverage" lowUpperBound="70" highLowerBound="99"/>
+            <text outputFile="php://stdout"/>
+        </report>
+    </coverage>
+    <php>
+        <ini name="error_reporting" value="E_ALL"/>
+    </php>
+    <testsuites>
+        <testsuite name="Php Test Project Tests Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging/>
+</phpunit>

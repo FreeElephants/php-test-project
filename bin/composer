@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir -p $HOME/.composer/cache/
+
+docker run --rm --interactive --tty \
+    --init \
+    --user `id -u`:`id -g` \
+    --volume $PWD:/var/www \
+    --volume $HOME/.composer:/tmp/.composer \
+    --env COMPOSER_HOME=/tmp/.composer \
+    free-elephants/php-test-project-dev composer "$@"
