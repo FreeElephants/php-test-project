@@ -15,6 +15,9 @@
  
 ## Installation
 
-`make install`
-
-`make test`
+```
+git clone git@github.com:FreeElephants/php-test-project.git
+cd php-test-project
+make install
+make test
+```
